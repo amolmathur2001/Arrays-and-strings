@@ -1,8 +1,6 @@
-//Gfg Q. Find missing and repeating number
-
 #include<bits/stdc++.h>
 using namespace std;
-void findTwoElement(int *arr, int n) {
+int  *findTwoElement(int *arr, int n) {
         // code here
         int missing = -1;
         int repeating = -1;
@@ -21,18 +19,22 @@ void findTwoElement(int *arr, int n) {
             }
         }
         //cout<<repeating<<" "<<missing<<endl;
-        int ans[2];
+        static int ans[2];
         ans[0] = repeating;
         ans[1]  = missing;
-        for(int i = 0; i < 2; i++){
-            cout<<ans[i]<<" ";
-        }
+        return ans;
+
 
 
 }
 int main(){
     int arr[2] = {2 , 2};
     int n = 2;
-    findTwoElement(arr,n);
+    int *ptr;
+    ptr = findTwoElement(arr,n);
+    for(int i = 0; i < n; i++){
+        cout<<*ptr<<" ";
+        ptr++;
+    }
 
 }
